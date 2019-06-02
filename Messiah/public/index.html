@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+        }
+
+        input[type=text] {
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            box-shadow: 1px 1px 2px #333333;
+            -moz-box-shadow: 1px 1px 2px #333333;
+            -webkit-box-shadow: 1px 1px 2px #333333;
+            background: #cccccc;
+            border: 1px solid #000000;
+            width: 150px
+        }
+
+        input[type=password] {
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            box-shadow: 1px 1px 2px #333333;
+            -moz-box-shadow: 1px 1px 2px #333333;
+            -webkit-box-shadow: 1px 1px 2px #333333;
+            background: #cccccc;
+            border: 1px solid #000000;
+            width: 150px
+        }
+
+
+
+        textarea {
+            border: 1px solid #000000;
+            background: #cccccc;
+            width: 150px;
+            height: 100px;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            box-shadow: 1px 1px 2px #333333;
+            -moz-box-shadow: 1px 1px 2px #333333;
+            -webkit-box-shadow: 1px 1px 2px #333333;
+        }
+
+        input[type=text]:hover,
+        textarea:hover {
+            background: #ffffff;
+            border: 1px solid #990000;
+        }
+
+        input[type=submit] {
+            background: #006699;
+            color: #ffffff;
+        }
+
+        input[type=password]:hover,
+        textarea:hover {
+            background: #ffffff;
+            border: 1px solid #990000;
+        }
+    </style>
+</head>
+
+<body>
+    <br><br><br><br>
+    <div style="margin-left: 40%">
+        <input id="emaill" name="emaill" type="text" style="height: 50px; width: 300px;"
+            placeholder="  Email"><br><br><br>
+        <input id="senha" name="senha" type="password" style="height: 50px; width: 300px;"
+            placeholder="  Senha"><br><br><br>
+    </div>
+    <div style="margin-left: 40%">
+        <button style="height: 50px; width: 300px;" type="button" onclick="login()">Entrar</button>
+    </div>
+</body>
+
+</html>
+<script>
+    function login() {
+        
+        if (emaill.value = "") {
+            alert(`campo de email esta vazio`)
+        }
+        if (senha.value = "") {
+            alert(`campo de senha esta vazio`)
+        }
+        else if (emaill.value != undefined && senha.value != undefined){
+            window.location.href = 'cadastro.html';
+        }
+        else {
+            alert('login ou senha incorretos');gi
+        }
+
+
+    }
+
+
+</script>

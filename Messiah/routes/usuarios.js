@@ -8,12 +8,12 @@ router.post('/entrar', function (req, res, next) {
 
   banco.conectar().then(() => {
     console.log(`Chegou p/ login: ${JSON.stringify(req.body)}`);
-    var login = req.body.emaill; // depois de .body, use o nome (name) do campo em seu formulário de login
+    var login = req.body.login; // depois de .body, use o nome (name) do campo em seu formulário de login
     var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login
     if (login == undefined || senha == undefined) {
-      throw new Error(`Dados de login não chegaram completos: ${emaill} / ${senha}`);
+      throw new Error(`Dados de login não chegaram completos: ${login} / ${senha}`);
     }
-    return banco.sql.query(`select * from login where login='${emaill}' and senha='${senha}'`);
+    return banco.sql.query(`select * from cadastro where Login='${login}' and senha='${senha}'`);
   }).then(consulta => {
 
     console.log(`Usuários encontrados: ${JSON.stringify(consulta.recordset)}`);
@@ -53,7 +53,7 @@ router.post('/cadastrar', function (req, res, next) {
 	  // coloque a frase de erro que quiser aqui. Ela vai aparecer no formulário de cadastro
       throw new Error(`Dados de cadastro não chegaram completos: ${login} / ${senha} / ${nome}`);
     }
-    return banco.sql.query(`select count(*) as contagem from usuario where login = '${login}'`);
+    return banco.sql.query(`select count(*) as contagem from cadastro where Login = '${login}'`);
   }).then(consulta => {
 
 	if (consulta.recordset[0].contagem >= 1) {
@@ -73,7 +73,7 @@ router.post('/cadastrar', function (req, res, next) {
   }).finally(() => {
 	  if (cadastro_valido) {		  
 			  
-		banco.sql.query(`insert into usuario (nome, login, senha) values ('${nome}','${login}','${senha}')`).then(function() {
+		banco.sql.query(`insert into cadastro (Nome, Login, Senha) values ('${nome}','${login}','${senha}')`).then(function() {
 			console.log(`Cadastro criado com sucesso!`);
 			res.sendStatus(201); 
 			// status 201 significa que algo foi criado no back-end, 

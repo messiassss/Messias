@@ -3,7 +3,7 @@ var desenvolvimento = false;
 var configuracoes = {
     producao: {
         server: "servidor01191024.database.windows.net",
-        user: "Messiah",
+        user: "messias01191024",
         password: "#Gf49795868802",
         database: "Messiah",
         options: {

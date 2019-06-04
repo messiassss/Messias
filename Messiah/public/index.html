@@ -8,10 +8,9 @@
     <title>Document</title>
 
     <style>
-        body {
-            background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-        }
-
+          body{
+        background: -webkit-linear-gradient(right, #3931af, #00c6ff);
+    }
         input[type=text] {
             border-radius: 4px;
             -moz-border-radius: 4px;
@@ -72,36 +71,63 @@
 
 <body>
     <br><br><br><br>
+    <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
     <div style="margin-left: 40%">
-        <input id="emaill" name="emaill" type="text" style="height: 50px; width: 300px;"
-            placeholder="  Email"><br><br><br>
-        <input id="senha" name="senha" type="password" style="height: 50px; width: 300px;"
-            placeholder="  Senha"><br><br><br>
+        <input name="nome" type="text" style="height: 50px; width: 300px;" placeholder="  Nome Completo"><br><br><br>
+        <input  name="login" type="text" style="height: 50px; width: 300px;" placeholder="  Email"><br><br><br>
+        <input  name="senha" type="password" style="height: 50px; width: 300px;" placeholder="  Senha"><br><br><br>
+        
     </div>
     <div style="margin-left: 40%">
-        <button style="height: 50px; width: 300px;" type="button" onclick="login()">Entrar</button>
-    </div>
+        <button id="btn_entrar">Cadastrar</button>
+     </div>
+     </form>
+     <img src="aguarde2.gif" id="img_aguarde" style="display: none;" width="100px">
+    
+     <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+         Erro no cadastro
+     </div>
 </body>
 
 </html>
+
 <script>
-    function login() {
-        
-        if (emaill.value = "") {
-            alert(`campo de email esta vazio`)
-        }
-        if (senha.value = "") {
-            alert(`campo de senha esta vazio`)
-        }
-        else if (emaill.value != undefined && senha.value != undefined){
-            window.location.href = 'cadastro.html';
-        }
-        else {
-            alert('login ou senha incorretos');gi
-        }
 
+    function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
 
+                window.location.href='login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
     }
 
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
 
 </script>

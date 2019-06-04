@@ -8,9 +8,10 @@
     <title>Document</title>
 
     <style>
-          body{
-        background: -webkit-linear-gradient(right, #3931af, #00c6ff);
-    }
+        body {
+            background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+        }
+
         input[type=text] {
             border-radius: 4px;
             -moz-border-radius: 4px;
@@ -71,34 +72,72 @@
 
 <body>
     <br><br><br><br>
+    <form id="form_login" method="post" onsubmit="return entrar()">
     <div style="margin-left: 40%">
-        <input id="nome" name="nome" type="text" style="height: 50px; width: 300px;" placeholder="  Nome Completo"><br><br><br>
-        <input id="emaill" name="emaill" type="text" style="height: 50px; width: 300px;" placeholder="  Email"><br><br><br>
-        <input id="nicknome" name="nicknome" type="text" style="height: 50px; width: 300px;" placeholder="  Nome de Usuario"><br><br><br>
-        <input id="senha" name="senha" type="password" style="height: 50px; width: 300px;" placeholder="  Senha"><br><br><br>
-        <input id="senhaa" name="senhaa" type="password" style="height: 50px; width: 300px;" placeholder="  Confirmar Senha"><br><br><br>
+        
+        <input  name="login" type="text" style="height: 50px; width: 300px;"
+            placeholder="  Email"><br><br><br>
+        <input  name="senha" type="password" style="height: 50px; width: 300px;"
+            placeholder="  Senha"><br><br><br>
     </div>
     <div style="margin-left: 40%">
-        <button style="height: 50px; width: 300px;" type="button" onclick="cadastrar()">Confirmar Cadastro</button>
+        <button style="height: 50px; width: 300px;" id="btn_entrar">Entrar</button>
     </div>
+</form>
+<img src="aguarde.gif" id="img_aguarde" style="display: none;">
+    
+<div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+    Usuário e/ou senha inválidos!
+</div>
 </body>
 
 </html>
 <script>
-    function cadastrar() {
-        if (nome.value =""){
-            alert(`campo nome esta vazio`)
+
+    verificarAutenticacao();
+
+    function verificarAutenticacao() {
+        if (sessionStorage.usuario_bandtec != undefined) {
+            window.location.href = 'grafico-google-charts.html';
         }
-        if(emaill.value =""){
-           alert(`campo de email esta vazio`)
-        }
-        if(nicknome.value =""){
-            alert(`Nome de usuario esta vazio`)
-        }
+    }
 
+    function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/entrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
 
+                response.json().then(function (resposta) {
 
-}
+                    sessionStorage.usuario_bandtec = resposta.Nome;
+                    verificarAutenticacao();
 
+                });
+            } else {
+
+                console.log('Erro de login!');
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
 
 </script>

@@ -2,7 +2,7 @@ body {
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
 }
 
-@media screen and (min-width: 768px ) {
+@media screen and (max-width: 768px ) {
     .campo{
         display: block;
         margin: auto;
@@ -27,7 +27,7 @@ body {
     } 
 
 }
-@media screen and (min-width: 480px ) {
+@media screen and (max-width: 480px ) {
     .campo{
         display: block;
         margin: auto;
@@ -52,7 +52,7 @@ body {
     }
 }
 
-@media screen and (min-width: 300px ) {
+@media screen and (max-width: 300px ) {
     .campo{
         display: block;
         margin: auto;

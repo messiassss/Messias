@@ -1,0 +1,57 @@
+body {
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
+@media screen and (min-width: 768px ) {
+ 
+.campo{
+        display: block;
+        margin: auto;
+        border-radius: 4%;
+        -moz-border-radius: 4%;
+        -webkit-border-radius: 4%;
+        box-shadow: 1% 1% 2% #333333;
+        -moz-box-shadow: 1% 1% 2% #333333;
+        -webkit-box-shadow: 1% 1% 2% #333333;
+        background: #cccccc;
+        border: 2% solid #000000;
+        width: 20%;
+        height: 30px;
+        margin-bottom: 3%;    
+        
+    }
+.but{
+    border-radius: 10%;
+    display: block;
+    margin: auto;
+    width: 18%;
+}
+}
+@media screen and (min-width: 480px ) {
+    .campo{
+        display: block;
+        margin: auto;
+        border-radius: 4%;
+        -moz-border-radius: 4%;
+        -webkit-border-radius: 4%;
+        box-shadow: 1% 1% 2% #333333;
+        -moz-box-shadow: 1% 1% 2% #333333;
+        -webkit-box-shadow: 1% 1% 2% #333333;
+        background: #cccccc;
+        border: 2% solid #000000;
+        width: 20%;
+        height: 30px;
+        margin-bottom: 3%;    
+        
+    }
+.but{
+    border-radius: 10%;
+    display: block;
+    margin: auto;
+    width: 18%;
+}
+}
+
+    
+
+
+

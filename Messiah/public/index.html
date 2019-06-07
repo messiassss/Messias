@@ -13,9 +13,12 @@
 <body>
     <section>
     <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-        <input class="campo" name="nome" type="text" placeholder="  Nome">
-        <input  class="campo" name="login" type="text" placeholder="  Email">
-        <input  class="campo" name="senha" type="password" placeholder="  Senha">
+        <input class="campo" name="nome" type="text" placeholder="  Nome" id="teste">
+        <input  class="campo" name="usuario" type="text" placeholder="  Nome de Usuário" id="teste1">
+        <input  class="campo" name="login" type="text" placeholder="  Email" id="teste2">
+        <input  class="campo" name="senha" type="password" placeholder="  Senha" id="senh">
+       
+        <input  class="campo"  type="password" placeholder="  Confirmação de Senha" id="senhaa">
         <button class="but" id="btn_entrar">Cadastrar</button>
     </form>
     </section>
@@ -31,6 +34,16 @@
 <script>
 
     function cadastrar() {
+        if(teste.value =="" || teste1.value =="" || teste2.value =="" || senh.value =="" || senhaa.value ==""){
+            alert(`Preencha todos os campos`)
+            return false;
+            finalizar_aguardar();
+        }
+        if(senh.value != senhaa.value){
+            alert(`Senhas diferentes`)
+            return false;
+            finalizar_aguardar();
+        }else {
         aguardar();
         var formulario = new URLSearchParams(new FormData(form_cadastro));
         fetch("/usuarios/cadastrar", {
@@ -53,7 +66,7 @@
         });
 
         return false;
-    }
+    }}
 
     function aguardar() {
         btn_entrar.disabled = true;

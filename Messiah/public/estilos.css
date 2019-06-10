@@ -1,7 +1,73 @@
-body {
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+
+#teste{
+    background-image: url(ta.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100%;
 }
+
+#teste1{
+    background-image: url(te.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100%;
+}
+
+
+
+#idade{
+    background-image: url(to.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100%;
+}
+
+
+
+#cpf{
+    background-image: url(tu.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100%;
+}
+
+
+
+#teste2{
+    background-image: url(ty.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100%;
+}
+#senh{
+    background-image: url(tk.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100%;
+}
+#senhaa{
+    background-image: url(ta.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100%;
+}
+
+
+#testee{
+    font-size: 150%;
+    background-image: url(testee.jpg); 
+    background-repeat: no-repeat;
+    background-size:100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;   
+}
+
+
+
 .campo{
+    font-size: 100%;
     display: block;
     margin: auto;
     border-radius: 4%;
@@ -12,17 +78,17 @@ body {
     -webkit-box-shadow: 1% 1% 2% #333333;
     background: #cccccc;
     border: 2% solid #000000;
-    height: 40px;
     width: 20%;
     margin-bottom: 3%;    
-    
+    height: 100%;
 }
 .but{
+    font-size: 150%; 
 border-radius: 10%;
 display: block;
 margin: auto;
 width: 20%;
-height: 25px;
+height: 20p
 }
 .gif{
     margin-top: 10%;
@@ -31,23 +97,61 @@ height: 25px;
     margin-bottom: auto;
     width:15%;
     height:15%;
-}
+}@media screen and (min-width: 1600px ) {
+    .campo,.but{
+        display:block;
+        width: 25%;
+        height: 25%;
+        font-size: 150%;
+    }#testee{
+        
+        background-image: url(testee.jpg); 
+        background-repeat: no-repeat;
+        background-size:100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;   
+    }   
+ }
+
+ 
+
+
+
 @media screen and (max-width: 1024px ) {
     .campo,.but{
         display:block;
         width: 36%;
         height: 20%;
-        font-size: 28px;
-        height: 60px;
+        font-size: 150%;
+    }#testee{
+        
+        background-image: url(testee.jpg); 
+        background-repeat: no-repeat;
+        background-size:350%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;   
     }   
  }
 @media screen and (max-width: 768px ) {
     .campo,.but{
         display:block;
-        width: 40%;
-        font-size: 25px;
+        width: 30%;
+        font-size: 150%;
         height: 45px;
-    }     
+    }   #testee{
+        
+        background-image: url(testee.jpg); 
+        background-repeat: no-repeat;
+        background-size:350%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;   
+    }  
 }
     @media screen and (max-width: 720px ) {
         .campo,.but{
@@ -55,15 +159,33 @@ height: 25px;
             width: 30%;
             font-size: 25px;
             height: 30px;
-        }
+        }#testee{
+            font-size: 150%;
+            background-image: url(testee.jpg); 
+            background-repeat: no-repeat;
+            background-size:210%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;   
+        }   
 
     }
     @media screen and (max-width: 480px ) {
         .campo,.but{
         display:block;
           width: 60%;
-          font-size: 18px;
+          font-size: 50%;
           height: 30px;
+        }   #testee{
+            
+            background-image: url(testee.jpg); 
+            background-repeat: no-repeat;
+            background-size:300%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;   
         }   
     }
     
@@ -74,9 +196,51 @@ height: 25px;
             font-size: 15px;       
             height: 30px;
         }
+        #testee{
+            font-size: 150%;
+            background-image: url(testee.jpg); 
+            background-repeat: no-repeat;
+            background-size:210%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;   
+        }   
+    }
+    @media screen and (max-width: 823px ) {
+        .campo,.but{
+            display:block;
+            width: 60%; 
+            font-size: 50%;       
+            height: 30px;
+        }
+        #testee{
+            font-size: 150%;
+            background-image: url(testee.jpg); 
+            background-repeat: no-repeat;
+            background-size:318%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;   
+        }   
     }
 
-    
-
-
-
+    @media screen and (max-width: 812px ) {
+        .campo,.but{
+            display:block;
+            width: 40%; 
+            font-size: 75%;       
+            height: 35%;
+        }
+        #testee{
+            
+            background-image: url(testee.jpg); 
+            background-repeat: no-repeat;
+            background-size:350%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;   
+        }   
+    }

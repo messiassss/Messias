@@ -7,30 +7,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="estilos.css">
+    <script type="text/javascript" src="jQuery/jquery-1.2.6.pack.js"></script>
+    <script type="text/javascript" src="jQuery/jquery.maskedinput-1.1.4.pack.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#cpf").mask("999.999.999-99");
+        });
+
+        $(document).ready(function () {
+            $("#idade").mask("99/99/9999");
+        });
+    </script>
  
 </head>
 
-<body>
+<body id="testee" >
+  
     <section>
-    <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-        <input class="campo" name="nome" type="text" placeholder="  Nome" id="teste">
-        <input  class="campo" name="usuario" type="text" placeholder="  Nome de Usuário" id="teste1">
-        <input  class="campo" name="login" type="text" placeholder="  Email" id="teste2">
-        <input  class="campo" name="senha" type="password" placeholder="  Senha" id="senh">
-       
-        <input  class="campo"  type="password" placeholder="  Confirmação de Senha" id="senhaa">
-        <button class="but" id="btn_entrar">Cadastrar</button>
-    </form>
-    </section>
-     <img class="gif" src="aguarde2.gif" id="img_aguarde" style="display: none;" width="100px">
-    
-     <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
-         Erro no cadastro
-     </div>
-</body>
-
-</html>
-
+        <section>
+            <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                <input style="color: rgb(226, 212, 21)"  class="campo" name="nome" type="text" placeholder="  Nome" id="teste">
+                <input style="color: rgb(47, 0, 255)" class="campo" name="usuario" type="text" placeholder="  Nome de Usuário" id="teste1">
+                <input style="color: rgb(244, 243, 245)" class="campo" name="idade" type="text" placeholder="  Data de Nascimento" id="idade">
+                <input  class="campo" name="cpf" type="text" placeholder="  CPF" id="cpf">
+                <input style="color: rgb(158, 157, 152)" class="campo" name="login" type="text" placeholder="  Email" id="teste2">
+                <input  class="campo" name="senha" type="password" placeholder="  Senha" id="senh">
+                <input  class="campo"  type="password" placeholder="  Confirmação de Senha" id="senhaa">
+                <button class="but" id="btn_entrar">Cadastrar</button>
+            </form>
+            </section>
+             <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+                 Erro no cadastro
+             </div>
+        </body>
+        
+        </html>
 <script>
 
     function cadastrar() {
@@ -70,13 +81,13 @@
 
     function aguardar() {
         btn_entrar.disabled = true;
-        img_aguarde.style.display='block';
+        //img_aguarde.style.display='block';
         div_erro.style.display='none';
     }
 
     function finalizar_aguardar() {
         btn_entrar.disabled = false;
-        img_aguarde.style.display='none';
+        //img_aguarde.style.display='none';
         div_erro.style.display='block';
     }
 

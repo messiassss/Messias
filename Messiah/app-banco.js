@@ -2,10 +2,10 @@ var desenvolvimento = false;
 
 var configuracoes = {
     producao: {
-        server: "servidor01191024.database.windows.net",
-        user: "messias01191024",
-        password: "#Gf49795868802",
-        database: "Messiah",
+        server: "tela-de-cadastro.database.windows.net",
+        user: "VGsP",
+        password: "#Gf43651961893",
+        database: "Tela_de_Cadastro",
         options: {
             encrypt: true
         },
